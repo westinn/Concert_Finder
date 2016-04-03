@@ -36,8 +36,8 @@ def getArtists(spot):
     followed_artists = spot.current_user_followed_artists(limit=30)
     indivs = followed_artists["artists"]["items"]
     for artist in indivs:
-        if not any(artist["images"][0]):
-           artist["images"][0] = {}
+        if len(artist["images"]) == 0:
+           artist["images"] = {}
            artist["images"][0]["url"] = "https://www.freebeerandhotwings.com/images/blog/tyson.jpeg"
     return render_template('concerts.html', data=indivs)
 
