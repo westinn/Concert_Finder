@@ -16,7 +16,7 @@ def main():
    return render_template('index.html')
 
 
-@app.route('/auth', methods=['POST'])
+@app.route('/auth')
 def auth():
     return redirect(authorize(), code=302)
 

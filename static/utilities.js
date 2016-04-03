@@ -3,19 +3,19 @@
  */
 
 
-$(function () {
-    $('#btn-login').click(function () {
-        $.ajax({
-            url: '/auth',
-            type: 'POST',
-            success: function (response) {
-                alert(response)
-            },
-            error: function (response) {
-                alert(response)
-            }
-        });
-    });
-});
+//$(function () {
+//    $('#btn-login').click(function () {
+//        $.ajax({
+//            url: '/auth',
+//            type: 'GET',
+//            success: function (response) {
+//                alert(response)
+//            },
+//            error: function (response) {
+//                alert(response)
+//            }
+//        });
+//    });
+//});
 
 
