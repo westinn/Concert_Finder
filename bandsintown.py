@@ -25,7 +25,7 @@ def send_request(url, args=[]):
     if response.getcode() != 200:
         raise RequestException("Request fail: %s" % response.read())
 
-    return json.decode(clean_slashes_for_cjson(response.read()))
+    return json.loads(clean_slashes_for_cjson(response.read()))
 
 
 class InputException(Exception):
