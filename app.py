@@ -18,7 +18,9 @@ def main():
        return render_template('index.html')
    else:
        print "Have token: {}".format(auth_token)
-       return render_template('index.html')
+       spot = spotipy.Spotify(auth=auth_token)
+       return gitgetArtists(spot)
+
 
 
 @app.route('/auth')
