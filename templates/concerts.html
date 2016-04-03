@@ -25,7 +25,7 @@
         {% for artist in data %}
         <div class="parent">
             <div class="flex-child" style="justify-content: right;"><img style="height:200px; width:200px"
-                    src={{ artist.images.url }}> </div>
+                    src={{ artist.images[0].url }}> </div>
             <div class="flex-child-right">
                 <div class="flex-parent">
                     <div class="flex-child"><h4>{{ artist.name }}</h4></div>
