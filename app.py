@@ -53,8 +53,6 @@ def artistnames(followed_artists):
     return names
 
 def findbands(names):
-    base_url = "http://api.bandsintown.com"
-    app_id = "jetfuelcantmeltsteelbeams"
 
     bandstuff = []
     for name in names:

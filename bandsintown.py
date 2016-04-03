@@ -3,7 +3,7 @@ import re
 import urllib
 
 base_url = "http://api.bandsintown.com"
-app_id = None
+app_id = "Hello"
 
 
 # Helper stuff
