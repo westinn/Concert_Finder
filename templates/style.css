@@ -1,0 +1,10 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-image: url("../static/background.png");
+	color: #2EBD59;
+}
+
+.logo {
+	font-family: 'Montserrat', sans-serif;
+	color: #2EBD59;
+}

@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Your Artists!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
+    <link href="../templates/style.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
     </script>
-
-    <script src="{{ url_for('static', filename="utilities.js") }}"></script>
-
+    <script src="{{ url_for('static', filename=" utilities.js ") }}"></script>
 </head>
 
 <body>
-<div class="container">
-    <h1>Welcome to Spotiscan!</h1>
-    <p>Log in with Spotify and we'll find out who's in the area!</p>
-    <a href="/auth"> <button class="btn btn-primary" id="btn-login"> Login </button> </a>
-
-</div>
+    <div class="container">
+        <h1 class="logo">SPOTISCAN</h1>
+        <a href="/auth" class="login"><img src="../static/login.png" class="login"></img>
+        </a>
+    </div>
 </body>
+
 </html>
