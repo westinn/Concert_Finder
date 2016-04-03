@@ -59,7 +59,7 @@ h1 {
 
 .Aligner {
     display: -webkit-flex;
-    display: -ms-flexbos;
+    display: -ms-flexbox;
     display: flex;
     height: 100%;
     align-items: center;
@@ -68,7 +68,6 @@ h1 {
 
 .Aligner-item {
     max-width: 75%;
-    flex: ;
 }
 
 .Aligner-item--top {
