@@ -24,13 +24,8 @@
         <h3 style="margin-left: 10px">March 1, 2016</h3>
         {% for artist in data %}
         <div class="parent">
-        {% if not artist.images.url %}
             <div class="flex-child" style="justify-content: right;"><img style="height:200px; width:200px"
                     src="http://www.politicspa.com/wp-content/uploads/2013/02/Silhouette-question-mark.jpeg"> </div>
-            {% else %}
-            <div class="flex-child" style="justify-cotent: right;"><img style="height:200px; width:200px"
-                                                                        src={{artist.images[0].url}}> </div>
-            {% endif %}
             <div class="flex-child-right">
                 <div class="flex-parent">
                     <div class="flex-child"><h4>{{ artist.name }}</h4></div>
