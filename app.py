@@ -57,8 +57,8 @@ def findbands(names):
         bandstuff.append(Artist.events(name=name))
     f = open("/opt/fbt/Concert_Finder/bt_json.txt", "r+")
     a = bandstuff[0]
-    b = a[0]
-    f.write(str(bandstuff[0]))
+
+    f.write(str(len(a)))
 
 
 
