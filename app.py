@@ -29,8 +29,8 @@ def auth():
 
 
 @app.route('/getArtists', methods=['GET'])
-def getArtists(my_spotify):
-    followed_artists = my_spotify.current_users_followed_artists(limit=100)
+def getArtists(spot):
+    followed_artists = spot.current_user_followed_artists(limit=100)
     return render_template('concerts.html', data=map(json.dumps, followed_artists))
 
 
