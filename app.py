@@ -36,13 +36,14 @@ def auth():
 def getArtists(spot):
     followed_artists = spot.current_user_followed_artists(limit=30)
     indivs = followed_artists["artists"]["items"]
-    findbands(artistnames(followed_artists), indivs)
+    location = []
+    findbands(artistnames(followed_artists), locations)
     for artist in indivs:
         if len(artist["images"]) == 0:
            artist["images"] = []
            artist["images"].append({})
            artist["images"][0]["url"] = "https://www.freebeerandhotwings.com/images/blog/tyson.jpeg"
-    return render_template('concerts.html', data=indivs)
+    return render_template('concerts.html', data=indivs, locations=location)
 
 
 def artistnames(followed_artists):
@@ -57,9 +58,9 @@ def findbands(names, indivs):
         bandstuff.append(Artist.events(name=name))
         a = Artist.events(name=name)
         if len(a) > 0:
-            indivs["locations"].append(str(a[0][0]) + str(a[0][1]))
+            indivs.append(str(a[0][0]) + str(a[0][1]))
         else:
-            indivs["locations"].append("No location avaliable")
+            indivs.append("No location avaliable")
     f = open("/opt/fbt/Concert_Finder/bt_json.txt", "r+")
     a = bandstuff[0]
 
