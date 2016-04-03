@@ -1,11 +1,13 @@
 from flask import Flask, render_template, request, redirect, g
 import urllib2
+import os
 import json
 import base64
 import requests
 
 import spotipy
 import spotipy.util as util
+from spotipy import oauth2 as oauth2
 from api import authorize
 
 app = Flask(__name__, static_url_path='/static')
@@ -18,7 +20,11 @@ def main():
        return render_template('index.html')
    else:
        print "Have token: {}".format(auth_token)
-       spot = spotipy.Spotify(auth=auth_token)
+       auth = spotipy.oauth2.SpotifyOauth(os.getenv('SPOTIPY_CLIENT_ID'),
+                                          os.getenv('SPOTIPY_CLIENT_SECRET'),
+                                          os.getenv('SPOTIPY_REDIRECT_URI'))
+       token = auth.get_access_token(auth_token)
+       spot = spotipy.Spotify(auth=token)
        return getArtists(spot)
 
 

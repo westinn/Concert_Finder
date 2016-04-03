@@ -9,4 +9,5 @@ def authorize():
 
      sp_oauth = oauth2.SpotifyOAuth(client_id, client_secret, redirect_uri)
 
+
      return sp_oauth.get_authorize_url()
