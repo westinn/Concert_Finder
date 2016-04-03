@@ -8,4 +8,6 @@ def authorize():
     client_secret = os.getenv('SPOTIPY_CLIENT_SECRET')
     redirect_uri = os.getenv('SPOTIPY_REDIRECT_URI')
 
-    return oauth2.SpotifyOAuth(client_id, client_secret, redirect_uri, scope="user-follow-read")
+    return oauth2.SpotifyOAuth(client_id, client_secret, redirect_uri,
+                               scope="user-follow-read user-library-read playlist-read-private")
+
