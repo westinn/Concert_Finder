@@ -34,9 +34,13 @@ def auth():
 @app.route('/getArtists', methods=['GET'])
 def getArtists(spot):
     followed_artists = spot.current_user_followed_artists(limit=30)
-    print followed_artists
+    artistNames(followed_artists)
     return render_template('concerts.html', data=map(json.dumps, followed_artists))
 
+def artistNames(followed_artists):
+    names = []
+    for item in followed_artists["artists"]["items"]:
+        print item["name"]
 
 if __name__ == '__main__':
     app.debug = True
