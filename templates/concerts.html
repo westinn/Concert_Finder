@@ -11,7 +11,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
-    <link href="/static/style.css" rel="stylesheet">
+    <link href="../static/style.css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
     </script>
     <script src="{{ url_for('static', filename='utilities.js') }}"></script>
@@ -21,23 +21,22 @@
 
 
 <body>
-	<div class="parent">Date goes here
-		<div class="flex-child">
-			<div class="parent">
-				<div class="flex-child">Name of the band goes here</div>
+	<h3 style="margin-left: 10px">March 1, 2016</h3>
+	<div class="parent">
+		<div class="flex-child" style="justify-content: right;"><img src="../static/login2.png"></div>
+		<div class="flex-child-right">
+			<div class="flex-parent">
+				<div class="flex-child"><h4>Name of the band goes here<h4></div>
 				<div class="flex-child">Location information goes here</div>
 				<div class="flex-child">
-					<div class="flex-parent">
-						<div class="flex-child">Get Tickets</div>
-						<div class="flex-child">Track Even</div>
-						<div class="flex-child">I'm going</div>
+					<div class="flex-parent-row">
+						<div class="flex-child-fc">Get Tickets</div>
+						<div class="flex-child">Track Event</div>
+						<div class="flex-child-lc">I'm going</div>
 					</div>
 				</div>
 			</div>
-			<div class="parent">
-				<div class="flex-child"></div>
-			</div>
-		<div>
+		</div>
 	</div>
 </body>
 </html>

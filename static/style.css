@@ -15,6 +15,48 @@ h1 {
 
 }
 
+.parent {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-parent {
+	flex-direction: column;
+}
+
+.flex-parent-row {
+	display: flex;
+	flex-direction: row;
+}
+.flex-child-right {
+	min-width: 30%;
+	text-align: right;
+}
+
+.flex-child {
+	min-width: 30%;
+	text-align: left;
+	border-left: 5px solid transparent;
+  	border-right: 5px solid transparent;
+  	margin-bottom: 5px;
+}
+
+.flex-child-fc {
+	min-width: 30%;
+	text-align: left;
+  	border-right: 5px solid transparent;
+
+}
+
+.flex-child-lc {
+	min-width: 30%;
+	text-align: left;
+	border-left: 5px solid transparent;
+
+}
+
 .Aligner {
     display: -webkit-flex;
     display: -ms-flexbos;
