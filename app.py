@@ -38,7 +38,7 @@ def getArtists(spot):
     for artist in indivs:
         if len(artist["images"]) == 0:
            artist["images"] = []
-           artist["images"][0] = {}
+           artist["images"].append({})
            artist["images"][0]["url"] = "https://www.freebeerandhotwings.com/images/blog/tyson.jpeg"
     return render_template('concerts.html', data=indivs)
 
