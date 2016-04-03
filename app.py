@@ -6,27 +6,34 @@ import requests
 
 import spotipy
 import spotipy.util as util
-
+from api import authorize
 
 app = Flask(__name__, static_url_path='/static')
 
 
 @app.route('/')
 def main():
-   return render_template('index.html')
+   auth_token = request.args.get("code", None)
+   if auth_token is None:
+       return render_template('index.html')
+   else:
+       print "Have token: {}".format(auth_token)
+       spot = spotipy.Spotify(auth=auth_token)
+       return getArtists(spot)
 
 
-@app.route('/linkToSpotify', methods=['POST'])
-def loginProtocol():
-    _newToken = util.prompt_for_user_token("agvdragon", "user-follow-read", client_id, secret_id, redirect_uri)
+
+@app.route('/auth')
+def auth():
+    return redirect(authorize(), code=302)
 
 
 @app.route('/getArtists', methods=['GET'])
-def getArtists(my_spotify):
-    followed_artists = my_spotify.current_users_followed_artists(limit=100)
+def getArtists(spot):
+    followed_artists = spot.current_user_followed_artists(limit=100)
     return render_template('concerts.html', data=map(json.dumps, followed_artists))
 
 
 if __name__ == '__main__':
     app.debug = True
-    app.run()
+    app.run(host="0.0.0.0")
