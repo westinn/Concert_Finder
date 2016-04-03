@@ -25,7 +25,7 @@
         {% for artist in data %}
         <div class="parent">
             <div class="flex-child" style="justify-content: right;"><img style="height:200px; width:200px"
-                    src="http://www.politicspa.com/wp-content/uploads/2013/02/Silhouette-question-mark.jpeg"> </div>
+                    src={{ artist.images.url }}> </div>
             <div class="flex-child-right">
                 <div class="flex-parent">
                     <div class="flex-child"><h4>{{ artist.name }}</h4></div>
