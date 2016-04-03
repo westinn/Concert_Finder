@@ -16,7 +16,7 @@ h1 {
 }
 
 .concerts{
-	background-image: url("../static/concertbg.png");
+	background-image: url("../static/concertbg.png"), linear-gradient(black, white);;
 	background-attachment: fixed;
 }
 
