@@ -34,8 +34,9 @@ def auth():
 @app.route('/getArtists', methods=['GET'])
 def getArtists(spot):
     followed_artists = spot.current_user_followed_artists(limit=30)
-    nombres = artistNames(followed_artists)
-    return render_template('concerts.html', data=map(json.dumps, nombres))
+    f_artists = artistNames(followed_artists)
+    indivs = f_artists["artists"]["items"]
+    return render_template('concerts.html', data=map(json.dumps, indivs))
 
 
 def artistNames(followed_artists):
