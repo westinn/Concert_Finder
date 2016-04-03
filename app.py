@@ -37,9 +37,9 @@ def getArtists(spot):
     artistNames(followed_artists)
     return render_template('concerts.html', data=map(json.dumps, followed_artists))
 
-def artistNames(artists):
+def artistNames(followed_artists):
     names = []
-    for item in artists["items"]:
+    for item in followed_artists["artists"]["items"]:
         print item["name"]
 
 if __name__ == '__main__':
