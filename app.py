@@ -22,7 +22,7 @@ def main():
         print "Have token: {}".format(auth_code)
         auth = authorize()
         token = auth.get_access_token(auth_code)
-        spot = spotipy.Spotify(auth=token)
+        spot = spotipy.Spotify(auth=token['auth_token'])
         return getArtists(spot)
 
 
@@ -33,10 +33,8 @@ def auth():
 
 @app.route('/getArtists', methods=['GET'])
 def getArtists(spot):
-    s = spot.search("Radioactive", limit=10, offset=0, type='track')
-    print s
-    #followed_artists = spot.current_user_followed_artists(limit=100)
-    #return render_template('concerts.html', data=map(json.dumps, followed_artists))
+    followed_artists = spot.current_user_followed_artists(limit=100)
+    return render_template('concerts.html', data=map(json.dumps, followed_artists))
 
 
 if __name__ == '__main__':
