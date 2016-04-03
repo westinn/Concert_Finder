@@ -5,7 +5,6 @@ import os
 import json
 import base64
 import requests
-import sort
 
 import spotipy
 import spotipy.util as util
@@ -41,7 +40,7 @@ def getArtists(spot):
     location = []
     dates = []
     findbands(artistnames(followed_artists), location, dates)
-    sort(dates, key=comp)
+    sorted(dates, key=comp)
     for artist in indivs:
         if len(artist["images"]) == 0:
            artist["images"] = []
