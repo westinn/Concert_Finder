@@ -22,7 +22,6 @@ def main():
        return getArtists(spot)
 
 
-
 @app.route('/auth')
 def auth():
     return redirect(authorize(), code=302)
