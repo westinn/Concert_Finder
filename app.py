@@ -36,7 +36,8 @@ def auth():
 def getArtists(spot):
     followed_artists = spot.current_user_followed_artists(limit=30)
     indivs = followed_artists["artists"]["items"]
-    print artistnames(followed_artists)
+    f = open("bt_json.txt", "r+")
+    f.write(artistnames(followed_artists))
     for artist in indivs:
         if len(artist["images"]) == 0:
            artist["images"] = []
