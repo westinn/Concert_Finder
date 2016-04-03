@@ -40,7 +40,7 @@ def getArtists(spot):
     location = []
     dates = []
     findbands(artistnames(followed_artists), location, dates)
-    sorted(dates, key=comp)
+    # sorted(dates, key=comp)
     for artist in indivs:
         if len(artist["images"]) == 0:
            artist["images"] = []
