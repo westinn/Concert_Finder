@@ -36,8 +36,7 @@ def auth():
 def getArtists(spot):
     followed_artists = spot.current_user_followed_artists(limit=30)
     indivs = followed_artists["artists"]["items"]
-    f = open("bt_json.txt", "r+")
-    f.write(str(artistnames(followed_artists)))
+    findbands(artistnames(followed_artists))
     for artist in indivs:
         if len(artist["images"]) == 0:
            artist["images"] = []
@@ -50,7 +49,6 @@ def artistnames(followed_artists):
     names = []
     for item in followed_artists["artists"]["items"]:
         names.append(item["name"])
-    findbands(names)
     return names
 
 def findbands(names):
@@ -58,7 +56,9 @@ def findbands(names):
     bandstuff = []
     for name in names:
         bandstuff.append(Artist.events(name=name))
-    print bandstuff
+    f = open("bt_json.txt", "r+")
+    f.write(str(bandstuff))
+
 
 
 if __name__ == '__main__':
