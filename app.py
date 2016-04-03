@@ -36,7 +36,7 @@ def auth():
 def getArtists(spot):
     followed_artists = spot.current_user_followed_artists(limit=30)
     indivs = followed_artists["artists"]["items"]
-    findbands(artistnames(followed_artists))
+    findbands(artistnames(followed_artists, indivs))
     for artist in indivs:
         if len(artist["images"]) == 0:
            artist["images"] = []
@@ -51,13 +51,15 @@ def artistnames(followed_artists):
         names.append(item["name"])
     return names
 
-def findbands(names):
+def findbands(names, indivs):
     bandstuff = []
     for name in names:
         bandstuff.append(Artist.events(name=name))
         a = Artist.events(name=name)
         if len(a) > 0:
-            b = str(a[0][0]) + str(a[0][1])
+            indivs["locations"].append(str(a[0][0]) + str(a[0][1]))
+        else:
+            indivs["locations"].append("No location avaliable")
     f = open("/opt/fbt/Concert_Finder/bt_json.txt", "r+")
     a = bandstuff[0]
 
