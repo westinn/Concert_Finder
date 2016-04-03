@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, g
-import bandsintown
+from bandsintown import Artist, base_url, app_id
 import urllib2
 import os
 import json
@@ -44,20 +44,20 @@ def getArtists(spot):
     return render_template('concerts.html', data=indivs)
 
 
-def artistNames(followed_artists):
+def artistnames(followed_artists):
     names = []
     for item in followed_artists["artists"]["items"]:
         names.append(item["name"])
-    findBands(names)
+    findbands(names)
     return names
 
-def findBands(names):
-    bandsintown.base_url = "http://api.bandsintown.com"
-    bandsintown.app_id = "jetfuelcantmeltsteelbeams"
+def findbands(names):
+    base_url = "http://api.bandsintown.com"
+    app_id = "jetfuelcantmeltsteelbeams"
 
     bandstuff = []
     for name in names:
-        bandstuff.append(bandsintown.Artist.events(name=name))
+        bandstuff.append(Artist.events(name=name))
     print bandstuff
 
 
