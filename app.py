@@ -58,7 +58,7 @@ def findbands(names, indivs):
         bandstuff.append(Artist.events(name=name))
         a = Artist.events(name=name)
         if len(a) > 0:
-            indivs.append(str(a[0][0]) + str(a[0][1]))
+            indivs.append(str(a))
         else:
             indivs.append("No location avaliable")
     f = open("/opt/fbt/Concert_Finder/bt_json.txt", "r+")
