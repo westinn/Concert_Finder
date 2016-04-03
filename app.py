@@ -35,6 +35,7 @@ def auth():
 def getArtists(spot):
     followed_artists = spot.current_user_followed_artists(limit=30)
     indivs = followed_artists["artists"]["items"]
+    import code; code.interact(local=locals())
     return render_template('concerts.html', data=map(json.dumps, indivs))
 
 
