@@ -40,6 +40,7 @@ def getArtists(spot):
     location = []
     dates = []
     findbands(artistnames(followed_artists), location, dates)
+    sort(dates, key=comp)
     for artist in indivs:
         if len(artist["images"]) == 0:
            artist["images"] = []
@@ -75,7 +76,15 @@ def findbands(names, indivs, dates):
 
     f.write(str(len(a)))
 
-
+def comp(x,y):
+    monthx = x[5:7]
+    dayx = x[8:]
+    monthy = y[5:7]
+    dayy = y[8:]
+    if monthx == monthy:
+        return dayx - dayy
+    else:
+        return monthx - monthy
 
 if __name__ == '__main__':
     app.debug = True
