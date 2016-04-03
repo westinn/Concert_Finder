@@ -33,8 +33,10 @@ def auth():
 
 @app.route('/getArtists', methods=['GET'])
 def getArtists(spot):
-    followed_artists = spot.current_user_followed_artists(limit=100)
-    return render_template('concerts.html', data=map(json.dumps, followed_artists))
+    s = spot.search("Radioactive", limit=10, offset=0, type='track')
+    print s
+    #followed_artists = spot.current_user_followed_artists(limit=100)
+    #return render_template('concerts.html', data=map(json.dumps, followed_artists))
 
 
 if __name__ == '__main__':
