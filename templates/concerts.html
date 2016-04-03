@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <title>Your Artists!</title>
     <link rel="icon" type="image/png" href="../static/faviconhh.png">
     <title>SPOTISCAN</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -9,12 +11,33 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
-    <link href="../static/style.css" rel="stylesheet">
+    <link href="/static/style.css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
     </script>
-    <script src="../static/utilities.js"></script>
+    <script src="{{ url_for('static', filename='utilities.js') }}"></script>
 </head>
+
+
+
+
 <body>
-	
+	<div class="parent">Date goes here
+		<div class="flex-child">
+			<div class="parent">
+				<div class="flex-child">Name of the band goes here</div>
+				<div class="flex-child">Location information goes here</div>
+				<div class="flex-child">
+					<div class="flex-parent">
+						<div class="flex-child">Get Tickets</div>
+						<div class="flex-child">Track Even</div>
+						<div class="flex-child">I'm going</div>
+					</div>
+				</div>
+			</div>
+			<div class="parent">
+				<div class="flex-child"></div>
+			</div>
+		<div>
+	</div>
 </body>
 </html>
