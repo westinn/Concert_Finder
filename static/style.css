@@ -17,7 +17,6 @@ h1 {
 
 .concerts{
 	background: black url("../static/concertbg.png") no-repeat;
-	color: black;
 	overflow: auto;
 	background-attachment: local;
 }
