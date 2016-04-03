@@ -16,7 +16,10 @@ h1 {
 }
 
 .concerts{
-	background-image: url("../static/concertbg.png"), linear-gradient(black, white);;
+	background: black url("../static/concertbg.png") no-repeat;
+	color: black;
+	overflow: auto;
+	background-attachment: local;
 }
 
 .parent {
