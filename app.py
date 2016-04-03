@@ -19,7 +19,7 @@ def main():
    else:
        print "Have token: {}".format(auth_token)
        spot = spotipy.Spotify(auth=auth_token)
-       return gitgetArtists(spot)
+       return getArtists(spot)
 
 
 
