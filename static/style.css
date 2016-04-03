@@ -1,7 +1,40 @@
+html {
+    height: 100%;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     color: #2EBD59;
     background-image: url("../static/background.png");
+    height: 100%;
+    margin: 0px 0px 0px 0px;
+}
+
+h1 {
+	font-size: 60px;
+
+}
+
+.Aligner {
+    display: -webkit-flex;
+    display: -ms-flexbos;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.Aligner-item {
+    max-width: 75%;
+    flex: ;
+}
+
+.Aligner-item--top {
+    align-self: flex-start;
+}
+
+.Aligner-item--bottom {
+    align-self: flex-end;
 }
 
 .logo {

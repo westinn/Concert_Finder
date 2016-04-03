@@ -1,0 +1,28 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #2EBD59;
+    background-image: url("../static/background.png");   
+}
+
+.Aligner {
+	display: flex;
+	align-item:center;
+	justify-content: center;
+}
+
+.Aligner-item {
+	max-width: 50%;
+}
+
+.Aligner-item--top {
+	align-self: flex-start;
+}
+
+
+.Aligner-item--bottom {
+	align-self: flex-end;
+}
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    color: #2EBD59;
+}
