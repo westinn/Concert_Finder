@@ -66,7 +66,7 @@ def findbands(names, indivs, dates):
             soup = BeautifulSoup(data)
             for x in soup.findAll('meta'):
                 if x.parent.name == "h3":
-                dates.append(x['content'])
+                    dates.append(x['content'])
         else:
             indivs.append("#")
             dates.append("No date")
