@@ -6,7 +6,7 @@
 $(function () {
     $('#btn-login').click(function () {
         $.ajax({
-            url: '/linkToSpotify',
+            url: '/auth',
             type: 'POST',
             success: function (response) {
                 alert(response)

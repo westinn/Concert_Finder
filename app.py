@@ -6,7 +6,7 @@ import requests
 
 import spotipy
 import spotipy.util as util
-
+from api import authorize
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -16,9 +16,9 @@ def main():
    return render_template('index.html')
 
 
-@app.route('/linkToSpotify', methods=['POST'])
-def loginProtocol():
-    _newToken = util.prompt_for_user_token("agvdragon", "user-follow-read", client_id, secret_id, redirect_uri)
+@app.route('/auth', methods=['POST'])
+def auth():
+    return redirect(authorize(), code=302)
 
 
 @app.route('/getArtists', methods=['GET'])
