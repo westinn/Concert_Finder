@@ -37,7 +37,7 @@ def getArtists(spot):
     followed_artists = spot.current_user_followed_artists(limit=30)
     indivs = followed_artists["artists"]["items"]
     location = []
-    findbands(artistnames(followed_artists), locations)
+    findbands(artistnames(followed_artists), location)
     for artist in indivs:
         if len(artist["images"]) == 0:
            artist["images"] = []
