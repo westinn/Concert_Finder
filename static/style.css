@@ -15,6 +15,11 @@ h1 {
 
 }
 
+.concerts{
+	background-image: url("../static/concertbg.png");
+	background-attachment: fixed;
+}
+
 .parent {
 	display: flex;
 	flex-direction: row;
