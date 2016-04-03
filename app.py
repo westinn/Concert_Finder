@@ -13,7 +13,12 @@ app = Flask(__name__, static_url_path='/static')
 
 @app.route('/')
 def main():
-   return render_template('index.html')
+   auth_token = request.args.get("code", None)
+   if auth_token is None:
+       return render_template('index.html')
+   else:
+       print "Have token: {}".format(auth_token)
+       return render_template('index.html')
 
 
 @app.route('/auth')
