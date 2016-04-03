@@ -58,7 +58,7 @@ def findbands(names):
 
     bandstuff = []
     for name in names:
-        bandstuff.append(Artist.events(name=name, app_id=app_id))
+        bandstuff.append(Artist.events(name=name))
     print bandstuff
 
 
