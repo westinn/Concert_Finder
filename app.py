@@ -15,15 +15,15 @@ app = Flask(__name__, static_url_path='/static')
 
 @app.route('/')
 def main():
-   auth_code = request.args.get("code", None)
-   if auth_code is None:
-       return render_template('index.html')
-   else:
-       print "Have token: {}".format(auth_code)
-       auth = authorize()
-       token = auth.get_access_token(auth_code)
-       spot = spotipy.Spotify(auth=token)
-       return getArtists(spot)
+    auth_code = request.args.get("code", None)
+    if auth_code is None:
+        return render_template('index.html')
+    else:
+        print "Have token: {}".format(auth_code)
+        auth = authorize()
+        token = auth.get_access_token(auth_code)
+        spot = spotipy.Spotify(auth=token)
+        return getArtists(spot)
 
 
 @app.route('/auth')
