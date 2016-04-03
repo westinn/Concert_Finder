@@ -52,11 +52,10 @@ def artistnames(followed_artists):
     return names
 
 def findbands(names):
-
     bandstuff = []
     for name in names:
         bandstuff.append(Artist.events(name=name))
-    f = open("bt_json.txt", "r+")
+    f = open("/opt/fbt/Concert_Finder/bt_json.txt", "r+")
     f.write(str(bandstuff))
 
 
